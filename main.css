@@ -1,0 +1,35 @@
+[data-id="app-content"] {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+
+  --nav-bar-height: 5rem;
+  --hero-section-height: calc(100% - var(--nav-bar-height))
+}
+
+[data-id="app-content"] > .nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  height: var(--nav-bar-height);
+}
+
+[data-id="app-content"] > section {
+  height: 100%;
+  min-height: 500px;
+}
+
+[data-id="app-content"] > .hero-section {
+  height: var(--hero-section-height);
+}
+
+.nav-bar {
+  height: 100px;
+  background-color: #06f;
+}
+
+.hero-section {
+  background-color: #444;
+}
