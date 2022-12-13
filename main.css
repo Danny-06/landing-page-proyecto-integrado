@@ -1,3 +1,15 @@
+::selection {
+  background-color: #3cebff42;
+}
+
+:root {
+  font-family: Inter;
+}
+
+h1 {
+  font-family: "Inter Medium";
+}
+
 [data-id="app-content"] {
   display: flex;
   flex-direction: column;
@@ -23,7 +35,7 @@
   background-color: #111;
 }
 
-[data-id="app-content"] > section {
+.section {
   min-height: 500px;
   height: var(--sections-height);
 
@@ -31,6 +43,10 @@
   padding-block: 2rem;
 
   overflow: auto;
+}
+
+.section h1 {
+  font-weight: normal;
 }
 
 .nav-bar {
@@ -71,10 +87,6 @@
   column-gap: 2rem;
 }
 
-.hero-section > * {
-  flex-basis: 40%;
-}
-
 .hero-section > .hero-img {
   min-width: 200px;
   width: 100%;
@@ -107,24 +119,105 @@
   font-size: clamp(1rem, 4vw, 1.6rem);
 }
 
-
-[data-id="app-content"] > section {
+.section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 2rem;
 }
 
-[data-id="app-content"] > section > * {
+.section > .mobile-img-section {
+  display: none;
+  width: 149px;
+  width: 149px;
+}
+
+.section > * {
   flex-basis: 45%;
 }
 
-[data-id="app-content"] > section > p {
+.hero-section > * {
+  flex-basis: 40%;
+}
+
+.section-3 > * {
+  flex-basis: auto;
+}
+
+.section > p {
   max-width: 55rem;
   font-size: clamp(1rem, 4vw, 1.6rem);
 }
 
-[data-id="app-content"] > section > .hero-img {
+.section > .hero-img {
   min-width: 200px;
   height: 100%;
+}
+
+.hero-section > .ionic-mobile {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.ionic-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+
+.ionic-mobile > img {
+  width: 78px;
+  height: 78px;
+}
+
+.ionic-mobile > .text {
+  font-size: 2rem;
+  font-family: Karla;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-inline: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .ionic-mobile {
+    display: flex;
+  }
+
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .section {
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 3rem;
+  }
+
+  .section >  .hero-img {
+    display: none;
+  }
+
+  .section > .mobile-img-section {
+    display: block;
+  }
+
+  .section > * {
+    flex-basis: auto;
+  }
+
+  .section h1 {
+    font-size: 2.2rem;
+  }
+
+  .section p {
+    font-size: 1.3rem;
+  }
+
+  .info {
+    padding-top: 0;
+  }
 }
