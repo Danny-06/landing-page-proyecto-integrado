@@ -23,15 +23,18 @@
 ._grid-overlay_ > * {
   grid-area: overlay;
   z-index: 0;
+
+  width: 100%;
+  height: 100%;
 }
 
 
-.__aspect-ratio-wrapper__ {
+._aspect-ratio-wrapper_ {
   position: relative;
   --aspect-ratio: 16 / 9;
 }
 
-.__aspect-ratio-wrapper__::before {
+._aspect-ratio-wrapper_::before {
   content: '';
   display: block;
 
@@ -42,7 +45,7 @@
   );
 }
 
-.__aspect-ratio-wrapper__ > :first-child {
+._aspect-ratio-wrapper_ > :first-child {
   position: absolute;
   top: 0;
   left: 0;
@@ -58,12 +61,12 @@
 }
 
 
-.__absolute-img-wrapper__ {
+._absolute-media-wrapper_ {
   position: relative;
   z-index: 0;
 }
 
-.__absolute-img-wrapper__ > img {
+._absolute-media-wrapper_ > :first-child {
   position: absolute;
   top: 0;
   left: 0;
