@@ -10,6 +10,17 @@ h1 {
   font-family: "Inter Medium";
 }
 
+.particle-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
 [data-id="app-content"] {
   display: flex;
   flex-direction: column;
@@ -35,10 +46,12 @@ h1 {
   background-color: #111;
 }
 
-.section {
+[data-id="app-content"] > section {
   min-height: 500px;
   height: var(--sections-height);
+}
 
+.section {
   padding-inline: 3rem;
   padding-block: 2rem;
 
@@ -64,7 +77,10 @@ h1 {
 }
 
 .hero-section {
+  position: relative;
   background-image: linear-gradient(180deg, #262B2E, #1E2122);
+
+  height: 100%;
 }
 
 .section-1 {
@@ -80,13 +96,16 @@ h1 {
 }
 
 
-.hero-section {
+.hero-section > .wrapper {
+  position: relative;
+  height: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.hero-section > .hero-img {
+.hero-section > .wrapper > .hero-img {
   min-width: 200px;
   width: 100%;
   height: 100%;
@@ -96,7 +115,7 @@ h1 {
   object-fit: contain;
 }
 
-.hero-section > .info {
+.hero-section > .wrapper > .info {
   align-self: flex-start;
 }
 
@@ -176,7 +195,7 @@ h1 {
   height: 100%;
 }
 
-.hero-section > .ionic-mobile {
+.hero-section > .wrapper > .ionic-mobile {
   margin-top: auto;
   align-self: flex-end;
 }
