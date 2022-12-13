@@ -39,9 +39,21 @@ window.addEventListener('resize', event => {
   particlesCanvas.height = parentSection.offsetHeight
 })
 
+function randomBoolean() {
+  return randomRange(0, 1) === 1
+}
 
-function randomRange(from, to) {
-  return Math.floor(Math.random() * (to + 1 - from)) + from
+function randomRange(from, to, exclude = null) {
+  const value = Math.floor(Math.random() * (to + 1 - from)) + from
+
+  if (value === exclude) {
+    if (randomBoolean()) {
+      return randomRange(value + 1, to)
+    }
+    return randomRange(from, value - 1)
+  }
+
+  return value
 }
 
 class Dot {
@@ -52,8 +64,8 @@ class Dot {
 
     this.size = randomRange(5, 20)
 
-    this.speedX = randomRange(1, 3)
-    this.speedY = randomRange(1, 3)
+    this.speedX = randomRange(-3, 3, 0)
+    this.speedY = randomRange(-3, 3, 0)
 
     this.draw()
   }
